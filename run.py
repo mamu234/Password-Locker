@@ -47,6 +47,12 @@ def main():
                 username=input()
                 print("set your password..")
                 userpassword=input()
+                save_user(create_user(firstname,lastname,username,userpassword))
+                print("your account was successfuly created  these are  your accounts detials")
+                print("-*10")
+                print(f"name:{firstname} {lastname} \nUsername:{username} \nPassword:{password}")
+                print("\nUse LOgin to your account with the details")
+                print("\n \n")
 
 
 if __name__ == '__main__':
