@@ -74,6 +74,12 @@ def main():
                 print("\n")
                 print("generate password automatically or create new password")
                 decision=input()
+                if  decision == "G":
+                    characters=string.ascii_letter + string.digits
+                    accountpassword="".join(choice(characters)for x in range(randint(6,16)))
+                    print(f"Password: {accountpassword}")
+                elif decision == "C":
+                    
 
 
 
