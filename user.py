@@ -70,3 +70,18 @@ class Credentials:
         """
 
         Credentials.account.append(self)
+
+    def delete_account(self)
+        """
+        delete_account  method removes thesaves credentials from accounts
+        """
+
+        Credentials.accounts.remove(self)
+    @classmethod
+    def display_accounts(cls):
+        """
+        display_accounts returns a list of the accounts
+        """
+        
+
+
