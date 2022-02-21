@@ -34,11 +34,20 @@ def display_accounts():
 def main():
         while True:
             print("welcome to password Vault write SU or LG to start")
-            print("SU -or LG")
-            option-input()
+            print("SU -or- LG")
+            option=input()
             if option == "SU":
                 print("create Account")
-                print("-")     
+                print("-"*10)   
+                print("enter your first name..")  
+                firstname=input()
+                print("enter your last name..")
+                lastname=input()
+                print("set your username..")
+                username=input()
+                print("set your password..")
+                userpassword=input()
+
 
 if __name__ == '__main__':
     main()
