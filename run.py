@@ -79,7 +79,15 @@ def main():
                     accountpassword="".join(choice(characters)for x in range(randint(6,16)))
                     print(f"Password: {accountpassword}")
                 elif decision == "C":
-                    
+                    print ("enter your password")
+                    accountpassword=input()
+                else:
+                    print("please put valid choice")
+                save_account(create_account(accountusername,accountname,accountpassword))
+                print("\n")
+                print(f"Username:{accountusername} \nAccount Name{accountname}  \nPassword:{accountpassword}")
+                
+
 
 
 
