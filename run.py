@@ -1,6 +1,8 @@
 
 import pyperclip
 from user import User
+from user import Credentials
+
 /usr/bin/env python3.6
 
 def create_user(firstname,lastname,username,userpassword):
@@ -16,6 +18,8 @@ def find_user(number):
     return User.find_by_number(number)
 def display_users():
     return User.display_users()
+
+def create_account
 
 def main():
         while True:

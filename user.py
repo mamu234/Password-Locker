@@ -49,3 +49,24 @@ class User :
             if user.username == number:
                 return True
                 return False
+
+class Credentials:
+    """
+    this class generates new isntnaces of Credentials
+    """
+
+    accounts =[]
+    def __init__(self,accountusername,accountname,accountpassword):
+        """
+        init methos helps define propertie of the object
+        """
+
+        self.accountusername = accountusername
+        self.accountname = accountname
+        self.accountpassword = accountpassword
+    def save_account(self)
+        """
+        save account method saves user info in the accounts
+        """
+
+        Credentials.account.append(self)
