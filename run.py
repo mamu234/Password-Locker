@@ -53,6 +53,12 @@ def main():
                 print(f"name:{firstname} {lastname} \nUsername:{username} \nPassword:{password}")
                 print("\nUse LOgin to your account with the details")
                 print("\n \n")
+        elif option == "LG":
+            print("your Username")
+            loginUsername = input()
+            print("your password")
+            loginPassword=input()
+            
 
 
 if __name__ == '__main__':
