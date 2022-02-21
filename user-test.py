@@ -36,5 +36,12 @@ def test_delete_user(self):
         test delete  is used to test if the cotnact can be dlelted from the contact list
         """
         self.new_contact.save_contact()
-        test_user = user("Test", "user","0712345678","test@user.com") # or new contct
-        test_user.sve_user()
+        test_user = user("Test", "user","0712345678","test@user.com") # for new contact
+        test_user.save_user()
+
+        self.new_user.delete_user() # for deleleting cotnact object
+        self.assertEqual(len(user.user_list),1)
+
+
+if __name__"" '__main__':
+    unittest.main()
