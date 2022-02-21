@@ -58,7 +58,23 @@ def main():
             loginUsername = input()
             print("your password")
             loginPassword=input()
-            
+            if find_user(loginPassword):
+                print("\n")
+                print("you can create several account and also view them")
+                print("*60")
+                print("AC -or- VC")
+                choose=input()
+                print("\n")
+                if choose == "AC"
+                print("add your credential account")
+                print("*25")
+                accountusername=loginUsername
+                print("account name")
+                accountname= input()
+                print("\n")
+                print("generate password automatically or create new password")
+                decision=input()
+
 
 
 if __name__ == '__main__':
