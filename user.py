@@ -82,6 +82,17 @@ class Credentials:
         """
         display_accounts returns a list of the accounts
         """
+        for account in cls.accounts:
+            return cls.accounts
         
+    @classmethod
+    def find_by_number(cls,number):
+        """
+        find by number method takes in a nubmer and return a contact if it matches the number
+        """
+        for account in cls.accounts:
+            if account.accountusername == number:
+                return account
+
 
 
