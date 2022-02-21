@@ -28,7 +28,8 @@ def delete_account()
 def find_account(number):
     return Credentials.find_by_number(number)
 def display_accounts():
-    
+    return Credentials.display_accounts()
+
 
 def main():
         while True:
