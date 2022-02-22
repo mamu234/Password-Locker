@@ -1,9 +1,10 @@
 
-import pyperclip
+import string
+from random import *
 from user import User
 from user import Credentials
 
-/usr/bin/env python3.6
+
 
 def create_user(firstname,lastname,username,userpassword):
     newuser= User(firstname,lastname,username,userpassword)
@@ -24,7 +25,8 @@ def create_account(accountusername,accountname,accountpassword):
     return newaccount
 def save_account(user):
     user.save_account()
-def delete_account()
+def delete_user(user):
+    user.delete_user()
 def find_account(number):
     return Credentials.find_by_number(number)
 def display_accounts():
@@ -50,11 +52,11 @@ def main():
                 save_user(create_user(firstname,lastname,username,userpassword))
                 print("your account was successfuly created  these are  your accounts detials")
                 print("-*10")
-                print(f"name:{firstname} {lastname} \nUsername:{username} \nPassword:{password}")
+                print(f"name:{firstname} {lastname} \nUsername:{username} \nPassword:{userpassword}")
                 print("\nUse LOgin to your account with the details")
                 print("\n \n")
-        elif option == "LG":
-            print("your Username")
+            elif option == "LG":
+             print("your Username")
             loginUsername = input()
             print("your password")
             loginPassword=input()
@@ -65,8 +67,8 @@ def main():
                 print("AC -or- VC")
                 choose=input()
                 print("\n")
-                if choose == "AC"
-                print("add your credential account")
+                if choose == "AC":
+                 print("add your credential account")
                 print("*25")
                 accountusername=loginUsername
                 print("account name")
@@ -86,10 +88,24 @@ def main():
                 save_account(create_account(accountusername,accountname,accountpassword))
                 print("\n")
                 print(f"Username:{accountusername} \nAccount Name{accountname}  \nPassword:{accountpassword}")
-                
+            elif choose == "VC":
+                if find_account(accountusername):
+                    print("here is a list of  accounts created")
+                    print("-"*25)
+                    for user in display_accounts():
+                        print(f"Account: {user.accountname} \nPassword: {user.accountpassword} \n\n")
+            else:
+                print("Invalid credentials")
+    #         else:
+    #         print("please try again")
+    #         print("\n")
+    # else:
+    #         print("incorrect infot try again thank you")
+    #         print("\n")
 
-
-
+    #     else:
+    #         print("kindly choose a valid choice")
+    #     print('\n')
 
 if __name__ == '__main__':
     main()
