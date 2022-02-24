@@ -2,14 +2,20 @@ import unittest
 from user import User
 
 
+
 class Testuser(unittest.TestCase):
     def setUp(self):
-         self.new_user = User("Carolyne","mamu234")# created contnct object
+         self.new_user = User("Carolyne","mamu234","36777")# created contnct object
+    
+    def tearDown(self):
+        User.clear_all()
 
     def test_init(self):
         self.assertEqual(self.new_user.user_name, "Carolyne")
         
         self.assertEqual(self.new_user.password, "mamu234")
+
+        self.assertEqual(self.new_user.phonenumber, "36777")
         
    
     def test_save_user(self):
@@ -18,17 +24,19 @@ class Testuser(unittest.TestCase):
         """
         self.new_user.save_user() # use for saving new contact
         self.assertEqual(len(User.userlist),1)
-    
+   
+
     def test_delete_user(self):
         """
-        test delete  is used to test if the cotnact can be dlelted from the contact list
+        test delete  is used to test if the contact can be deleted from the contact list
         """
-        self.new_contact.save_contact()
-        test_user = User("Test", "user","0712345678","test@user.com") # for new contact
+        self.new_user.save_user()
+        test_user = User("Test", "Carolyne","mamu234","36777") # for new contact
         test_user.save_user()
 
-        self.new_user.delete_user() # for deleleting cotnact object
-        self.assertEqual(len(User.user_list),1)
+        self.new_user.delete_user() # for deleleting contact object
+        self.assertEqual(len(User.userlist),1)
+  
 
 
 if __name__== '__main__':

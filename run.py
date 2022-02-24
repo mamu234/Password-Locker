@@ -6,8 +6,8 @@ from user import Credentials
 
 
 
-def create_user(firstname,lastname,username,userpassword):
-    newuser= User(firstname,lastname,username,userpassword)
+def create_user(username,userpassword,phonenumber):
+    newuser= User(username,userpassword,phonenumber)
     return newuser
 
 def save_user(user):
@@ -15,8 +15,8 @@ def save_user(user):
 
 def delete_user(user):
     user.delete_user()
-def find_user(number):
-    return User.find_by_number(number)
+def find_user(phonenumber):
+    return User.find_by_number
 def display_users():
     return User.display_users()
 
@@ -25,10 +25,10 @@ def create_account(accountusername,accountname,accountpassword):
     return newaccount
 def save_account(user):
     user.save_account()
-def delete_user(user):
-    user.delete_user()
+def delete_account(user):
+    user.delete_account()
 def find_account(number):
-    return Credentials.find_by_number(number)
+    return Credentials.find_by_number
 def display_accounts():
     return Credentials.display_accounts()
 
@@ -41,18 +41,16 @@ def main():
             if option == "SU":
                 print("create Account")
                 print("-"*10)   
-                print("enter your first name..")  
-                firstname=input()
-                print("enter your last name..")
-                lastname=input()
                 print("set your username..")
                 username=input()
                 print("set your password..")
                 userpassword=input()
-                save_user(create_user(firstname,lastname,username,userpassword))
+                print("set your number..")
+                usernumber=input()
+                save_user(create_user(username,userpassword,usernumber))
                 print("your account was successfuly created  these are  your accounts detials")
                 print("-*10")
-                print(f"name:{firstname} {lastname} \nUsername:{username} \nPassword:{userpassword}")
+                print(f"name:Username:{username} \nPassword:{userpassword} \nNumber:{usernumber}")
                 print("\nUse LOgin to your account with the details")
                 print("\n \n")
             elif option == "LG":
@@ -60,6 +58,7 @@ def main():
             loginUsername = input()
             print("your password")
             loginPassword=input()
+            
             if find_user(loginPassword):
                 print("\n")
                 print("you can create several account and also view them")
@@ -85,27 +84,18 @@ def main():
                     accountpassword=input()
                 else:
                     print("please put valid choice")
-                save_account(create_account(accountusername,accountname,accountpassword))
+                    save_user(create_account(accountusername,accountname,accountpassword))
                 print("\n")
-                print(f"Username:{accountusername} \nAccount Name{accountname}  \nPassword:{accountpassword}")
+                print(f"Username:{accountusername} \nAccount Name{accountname} \nPassword:{accountpassword}")
             elif choose == "VC":
-                if find_account(accountusername):
+                if find_user(accountusername):
                     print("here is a list of  accounts created")
                     print("-"*25)
                     for user in display_accounts():
-                        print(f"Account: {user.accountname} \nPassword: {user.accountpassword} \n\n")
+                        print(f"Account: {accountusername}/nName: {user.accountname} \nPassword: {user.accountpassword} \n\n")
             else:
                 print("Invalid credentials")
-    #         else:
-    #         print("please try again")
-    #         print("\n")
-    # else:
-    #         print("incorrect infot try again thank you")
-    #         print("\n")
-
-    #     else:
-    #         print("kindly choose a valid choice")
-    #     print('\n')
+    
 
 if __name__ == '__main__':
     main()
