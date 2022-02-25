@@ -7,8 +7,6 @@ class Testuser(unittest.TestCase):
     def setUp(self):
          self.new_user = User("Carolyne","mamu234","36777")# created contnct object
     
-    def tearDown(self):
-        User.clear_all()
 
     def test_init(self):
         self.assertEqual(self.new_user.user_name, "Carolyne")
@@ -23,7 +21,7 @@ class Testuser(unittest.TestCase):
         test_save_user test used to test if the user object  has been saved in the user list 
         """
         self.new_user.save_user() # use for saving new contact
-        self.assertEqual(len(User.userlist),1)
+        self.assertEqual(len(User.userlist),2)
    
 
     def test_delete_user(self):
@@ -31,7 +29,7 @@ class Testuser(unittest.TestCase):
         test delete  is used to test if the contact can be deleted from the contact list
         """
         self.new_user.save_user()
-        test_user = User("Test", "Carolyne","mamu234","36777") # for new contact
+        test_user = User("Carolyne","mamu234","36777") # for new contact
         test_user.save_user()
 
         self.new_user.delete_user() # for deleleting contact object

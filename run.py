@@ -73,7 +73,7 @@ def main():
                 print("account name")
                 accountname= input()
                 print("\n")
-                print("generate password automatically or create new password")
+                print("generate password automatically or create new password to generate choose and to type out choose c")
                 decision=input()
                 if  decision == "G":
                     characters=string.ascii_letter + string.digits
@@ -85,8 +85,8 @@ def main():
                 else:
                     print("please put valid choice")
                     save_user(create_account(accountusername,accountname,accountpassword))
-                print("\n")
-                print(f"Username:{accountusername} \nAccount Name{accountname} \nPassword:{accountpassword}")
+                    print("\n")
+                    print(f"Username:{accountusername} \nAccount Name{accountname} \nPassword:{accountpassword}")
             elif choose == "VC":
                 if find_user(accountusername):
                     print("here is a list of  accounts created")

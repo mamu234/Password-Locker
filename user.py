@@ -36,10 +36,10 @@ class User :
            if user.phonenumber== phonenumber:
                return True
 
-   @classmethod
-   def clear_all(cls):
-       if(len(cls.userlist) == 0):
-                return "Empty"
+#    @classmethod
+#    def clear_all(cls):
+#        if(len(cls.userlist) == 0):
+#                 return "Empty"
        else:
             for user in cls.userlist:
                 cls.userlist.remove(user)
